@@ -1,0 +1,147 @@
+.about {
+    width: 100%;
+    background-color: #ffffff;
+    padding: 80px 0;  /* Added top padding to account for fixed header */
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.about-content {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    color: #1a1a1a;
+    text-align: center;
+    margin-bottom: 3rem;
+    position: relative;
+    width: 100%;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background-color: #4f46e5;
+    border-radius: 2px;
+}
+
+.about-text {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto 4rem;
+    text-align: center;
+    padding: 0 1rem;
+}
+
+.bio, .mission {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #4a5568;
+    margin-bottom: 1.5rem;
+}
+
+.skills-container {
+    width: 100%;
+    margin-top: 3rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.skills-container h3 {
+    font-size: 1.8rem;
+    color: #2d3748;
+    text-align: center;
+    margin-bottom: 2rem;
+    width: 100%;
+}
+
+.skills-grid {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    padding: 1rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.skill-card {
+    background-color: #f8f9fa;
+    padding: 2rem;
+    border-radius: 1rem;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.skill-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
+}
+
+.skill-icon {
+    font-size: 2.5rem;
+    color: #4f46e5;
+    margin-bottom: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.skill-card h4 {
+    font-size: 1.3rem;
+    color: #2d3748;
+    margin-bottom: 1rem;
+    width: 100%;
+}
+
+.skill-card p {
+    font-size: 1rem;
+    color: #718096;
+    line-height: 1.6;
+    width: 100%;
+}
+
+@media screen and (max-width: 768px) {
+    .about {
+        padding: 60px 1rem;
+    }
+
+    .section-title {
+        font-size: 2rem;
+    }
+
+    .bio, .mission {
+        font-size: 1rem;
+        padding: 0;
+    }
+
+    .skills-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+        padding: 0.5rem;
+    }
+
+    .skill-card {
+        padding: 1.5rem;
+    }
+
+    .about-content {
+        padding: 0 1rem;
+    }
+}
