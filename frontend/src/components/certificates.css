@@ -64,7 +64,7 @@
   height: 190px;
   object-fit: cover;
   object-position: center;
-  animation: imageFloat 3s ease-in-out infinite;
+  animation: imageFloat 2s ease-in-out infinite;
   transform-origin: center;
 }
 

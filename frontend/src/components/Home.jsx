@@ -5,7 +5,7 @@ import './Home.css';
 
 const Home = () => {
     const handleDownloadCV = () => {
-        const cvUrl = 'src/assets/AlgoUniversity_Student_Resume_Template (5).pdf';
+        const cvUrl = 'Resume.pdf';
         window.open(cvUrl, '_blank');
     };
 
@@ -42,7 +42,7 @@ const Home = () => {
 
                 <div className="image-container">
                     <img 
-                        src="../src/assets/Thub.jpg" 
+                        src="Thub.jpg" 
                         alt="Preethi" 
                         className="profile-image"
                     />
