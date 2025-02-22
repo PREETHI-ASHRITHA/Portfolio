@@ -42,7 +42,7 @@ const Home = () => {
 
                 <div className="image-container">
                     <img 
-                        src="public\assets\Thub.jpg" 
+                        src="../public/assets/Thub.jpg" 
                         alt="Preethi" 
                         className="profile-image"
                     />
