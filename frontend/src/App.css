@@ -1,7 +1,9 @@
 .app {
   position: relative;
   min-height: 100vh;
+  width: 98.8vw;
   background-color: #ffffff;
+  overflow-x: hidden;
 }
 
 * {
@@ -15,33 +17,45 @@ html {
 }
 
 .container {
+  width: 100%;
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 2rem;
 }
 
-.section-padding {
-  padding: 3rem 0;
+.section {
+  padding: 1.5rem 0;
+  min-height: calc(100vh - 60px); /* Assuming header is around 60px */
+  display: flex;
+  align-items: center;
 }
 
 .main-content {
-  padding-top: 40px; 
+  padding-top: 30px;
 }
 
 .footer {
-  padding: 2rem 0;
+  margin-top: 60px;
+  padding: 1.5rem 0;
   text-align: center;
-  background-color: #ffffff;
-  /* border-top: 1px solid #e5e5e5; */
+  background-color: #e9eff6;
+}
+
+#skills,#projects, #about {
+  padding: 1.0rem 0;
+}
+
+/* #certificates{
+  padding: 1.5rem 0;
+} */
+
+#contact{
+  padding: 0.5rem 0;
 }
 
 #home {
   background-color: #ffffff;
 }
-/* 
-#about, #skills, #projects, #certificates, #contact {
-  border-bottom: 1px solid #e5e5e5;
-} */
 
 #about, #projects, #contact {
   background-color: #ffffff;
@@ -53,8 +67,9 @@ html {
 
 /* Media queries */
 @media screen and (max-width: 768px) {
-  .section-padding {
-    padding: 4rem 0;
+  .section {
+    padding: 2rem 0;
+    min-height: auto;
   }
   
   .container {
@@ -63,7 +78,7 @@ html {
 }
 
 @media screen and (max-width: 480px) {
-  .section-padding {
-    padding: 3rem 0;
+  .section {
+    padding: 1.5rem 0;
   }
 }

@@ -1,120 +1,344 @@
-/* Main container styles */
+/* Certificates Section */
 .certificates-section {
-    padding: 40px 20px;
-    max-width: 1200px;
+  padding: 40px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #ffffff;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 32px;
+  color: #333;
+  margin-bottom: 40px;
+  font-weight: 700;
+  text-decoration: none !important; /* Added !important to override any inherited styles */
+  border-bottom: none !important;   /* Added !important to ensure no border appears */
+  position: relative;
+  animation: slideInDown 0.8s ease-out forwards;
+}
+
+.section-title::after {
+  content: none !important; /* Prevents pseudo-elements that might add underlines */
+}
+
+.certificates-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 30px;
+  width: 100%;
+  justify-items: center;
+}
+
+/* Certificate Card Styling with Animations */
+.certificate-card {
+  width: 300px;
+  max-width: 100%;
+  background-color: #e9eff6;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: all 0.3s ease;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  animation: fadeInUp 0.6s ease-out forwards;
+  opacity: 0;
+}
+
+/* Image container and animation */
+.certificate-image-container {
+  position: relative;
+  height: 190px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.certificate-image {
+  width: 100%;
+  height: 190px;
+  object-fit: cover;
+  object-position: center;
+  animation: imageFloat 3s ease-in-out infinite;
+  transform-origin: center;
+}
+
+/* Continuous floating animation for images */
+@keyframes imageFloat {
+  0% {
+    transform: translateY(0) scale(1);
+  }
+  50% {
+    transform: translateY(-5px) scale(1.02);
+  }
+  100% {
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* Slide down animation for title */
+@keyframes slideInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Image overlay effect */
+.certificate-image-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,0.2) 100%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  animation: pulseOverlay 2s infinite;
+}
+
+@keyframes pulseOverlay {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+/* Hover effects */
+.certificate-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+.certificate-card:hover .certificate-image {
+  animation: imageHover 1.5s ease-in-out infinite;
+}
+
+@keyframes imageHover {
+  0% {
+    transform: scale(1.05) translateY(0);
+  }
+  50% {
+    transform: scale(1.05) translateY(-8px);
+  }
+  100% {
+    transform: scale(1.05) translateY(0);
+  }
+}
+
+.certificate-card:hover .certificate-image-overlay {
+  opacity: 0.2;
+  animation: none;
+}
+
+.certificate-content {
+  padding: 20px;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  animation: fadeIn 0.5s ease-out forwards;
+  animation-delay: 0.3s;
+  opacity: 0;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.certificate-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #333;
+  margin: 0 0 10px 0;
+  line-height: 1.3;
+}
+
+.certificate-issuer,
+.certificate-date {
+  color: #666;
+  margin: 5px 0;
+  font-size: 14px;
+}
+
+.certificate-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: auto;
+  padding-top: 15px;
+}
+
+.view-button {
+  padding: 8px 16px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  background-color: #007bff;
+  color: white;
+  flex-grow: 1;
+}
+
+/* Button ripple effect */
+.view-button::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 5px;
+  height: 5px;
+  background: rgba(255, 255, 255, 0.5);
+  opacity: 0;
+  border-radius: 100%;
+  transform: scale(1, 1) translate(-50%, -50%);
+  transform-origin: 50% 50%;
+}
+
+.view-button:hover::after {
+  animation: ripple 1s ease-out;
+}
+
+.view-button:hover {
+  background-color: #0056b3;
+  transform: translateY(-2px);
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes ripple {
+  0% {
+    transform: scale(0, 0);
+    opacity: 0.5;
+  }
+  100% {
+    transform: scale(20, 20);
+    opacity: 0;
+  }
+}
+
+/* Staggered animation delay for cards */
+.certificate-card:nth-child(1) { animation-delay: 0.1s; }
+.certificate-card:nth-child(2) { animation-delay: 0.2s; }
+.certificate-card:nth-child(3) { animation-delay: 0.3s; }
+.certificate-card:nth-child(4) { animation-delay: 0.4s; }
+.certificate-card:nth-child(5) { animation-delay: 0.5s; }
+.certificate-card:nth-child(6) { animation-delay: 0.6s; }
+.certificate-card:nth-child(7) { animation-delay: 0.7s; }
+.certificate-card:nth-child(8) { animation-delay: 0.8s; }
+.certificate-card:nth-child(9) { animation-delay: 0.9s; }
+
+/* Responsive Design */
+@media screen and (max-width: 1220px) {
+  .certificates-grid {
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .certificates-grid {
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 25px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .certificates-section {
+    padding: 30px 15px;
+  }
+  
+  .section-title {
+    font-size: 28px;
+    margin-bottom: 30px;
+  }
+  
+  .certificates-grid {
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 20px;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .certificates-section {
+    padding: 25px 12px;
+  }
+  
+  .section-title {
+    font-size: 24px;
+    margin-bottom: 25px;
+  }
+  
+  .certificates-grid {
+    grid-template-columns: 1fr;
+    max-width: 320px;
     margin: 0 auto;
   }
   
-  /* Section title styling */
-  .section-title {
-    text-align: center;
-    font-size: 32px;
-    color: #333;
-    margin-bottom: 40px;
-  }
-  
-  /* Grid layout for certificates */
-  .certificates-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
-    padding: 20px;
-  }
-  
-  /* Individual certificate card styling */
   .certificate-card {
-    background-color: white;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
-    transition: transform 0.3s ease;
-  }
-  
-  /* Hover effect for cards */
-  .certificate-card:hover {
-    transform: translateY(-5px);
-  }
-  
-  /* Certificate image styling */
-  .certificate-image {
     width: 100%;
-    height: 200px;
-    object-fit: cover;
-    border-bottom: 1px solid #eee;
   }
   
-  /* Content area within card */
-  .certificate-content {
-    padding: 20px;
+  .certificate-image {
+    animation: imageFloatMobile 3s ease-in-out infinite;
   }
   
-  /* Certificate title styling */
-  .certificate-title {
-    font-size: 20px;
-    color: #333;
-    margin: 0 0 10px 0;
-  }
-  
-  /* Certificate issuer and date styling */
-  .certificate-issuer,
-  .certificate-date {
-    color: #666;
-    margin: 5px 0;
-    font-size: 14px;
-  }
-  
-  /* Button container styling */
-  .certificate-actions {
-    display: flex;
-    gap: 10px;
-    margin-top: 15px;
-  }
-  
-  /* Button styles */
-  .view-button,
-  .verify-button {
-    padding: 8px 16px;
-    border-radius: 5px;
-    text-decoration: none;
-    font-size: 14px;
-    transition: background-color 0.3s ease;
-  }
-  
-  .view-button {
-    background-color: #007bff;
-    color: white;
-  }
-  
-  .verify-button {
-    background-color: #28a745;
-    color: white;
-  }
-  
-  .view-button:hover {
-    background-color: #0056b3;
-  }
-  
-  .verify-button:hover {
-    background-color: #218838;
-  }
-  
-  /* Responsive design */
-  @media screen and (max-width: 768px) {
-    .certificates-section {
-      padding: 20px 10px;
+  @keyframes imageFloatMobile {
+    0% {
+      transform: translateY(0) scale(1);
     }
-  
-    .section-title {
-      font-size: 24px;
-      margin-bottom: 20px;
+    50% {
+      transform: translateY(-3px) scale(1.01);
     }
-  
-    .certificates-grid {
-      gap: 20px;
-      padding: 10px;
-    }
-  
-    .certificate-card {
-      max-width: 100%;
+    100% {
+      transform: translateY(0) scale(1);
     }
   }
+}
+
+/* Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  .certificate-card,
+  .certificate-image,
+  .view-button::after,
+  .certificate-image-overlay,
+  .section-title {
+    animation: none;
+    transition: none;
+  }
+  
+  .certificate-card:hover .certificate-image {
+    transform: none;
+    animation: none;
+  }
+}

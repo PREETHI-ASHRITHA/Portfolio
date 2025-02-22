@@ -54,31 +54,37 @@ const Contact = () => {
 
   return (
     <div className="contact-section" id="contact">
-      <h2 className="contact-heading">Get In Touch</h2>
+      <h2 className="contact-heading animate-fade-down">Get In Touch</h2>
       <div className="contact-content">
         <div className="contact-info">
-          <div className="info-item">
+          <div className="info-item animate-fade-right">
             <i className="icon email-icon"></i>
             <h3>Email</h3>
             <p>preethiashrithagunnam@gmail.com</p>
           </div>
+
+          <div className="info-item animate-fade-right" style={{animationDelay: '0.2s'}}>
+            <i className="icon mobile-icon"></i>
+            <h3>Contact</h3>
+            <p>+91 6281092144</p>
+          </div>
           
-          <div className="info-item">
+          <div className="info-item animate-fade-right" style={{animationDelay: '0.4s'}}>
             <i className="icon location-icon"></i>
             <h3>Location</h3>
             <p>Kakinada, India</p>
           </div>
         </div>
         
-        <form className="contact-form" ref={form} onSubmit={handleSubmit}>
+        <form className="contact-form animate-fade-left" ref={form} onSubmit={handleSubmit}>
           {status === 'success' && (
-            <div className="success-message">Message sent successfully!</div>
+            <div className="success-message animate-bounce">Message sent successfully!</div>
           )}
           {status === 'error' && (
-            <div className="error-message">Failed to send message. Please try again.</div>
+            <div className="error-message animate-bounce">Failed to send message. Please try again.</div>
           )}
           {status === 'sending' && (
-            <div className="sending-message">Sending message...</div>
+            <div className="sending-message animate-pulse">Sending message...</div>
           )}
           
           <div className="form-row">
@@ -92,6 +98,7 @@ const Contact = () => {
                 onChange={handleChange}
                 required
                 placeholder="Enter your name"
+                className="input-animate"
               />
             </div>
 
@@ -105,6 +112,7 @@ const Contact = () => {
                 onChange={handleChange}
                 required
                 placeholder="Enter your email"
+                className="input-animate"
               />
             </div>
           </div>
@@ -119,6 +127,7 @@ const Contact = () => {
               onChange={handleChange}
               required
               placeholder="Enter subject"
+              className="input-animate"
             />
           </div>
 
@@ -130,8 +139,9 @@ const Contact = () => {
               value={formData.message}
               onChange={handleChange}
               required
-              rows="5"
+              rows="4"
               placeholder="Write your message here..."
+              className="input-animate message-box"
             ></textarea>
           </div>
 

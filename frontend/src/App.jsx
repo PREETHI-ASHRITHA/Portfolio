@@ -13,37 +13,37 @@ function App() {
     <div className="app">
       <Header />
       <main className="main-content">
-        <section id="home" className="section-padding">
+        <section id="home" className="section">
           <div className="container">
             <Home />
           </div>
         </section>
         
-        <section id="about" className="section-padding">
+        <section id="about" className="section">
           <div className="container">
             <About />
           </div>
         </section>
         
-        <section id="skills" className="section-padding">
+        <section id="skills" className="section">
           <div className="container">
             <Skills />
           </div>
         </section>
         
-        <section id="projects" className="section-padding">
+        <section id="projects" className="section">
           <div className="container">
             <Projects />
           </div>
         </section>
         
-        <section id="certificates" className="section-padding">
+        <section id="certificates" className="section">
           <div className="container">
             <Certificates />
           </div>
         </section>
         
-        <section id="contact" className="section-padding">
+        <section id="contact" className="section">
           <div className="container">
             <Contact />
           </div>

@@ -2,46 +2,52 @@ import React from 'react';
 import './Projects.css';
 
 const Projects = () => {
+  const projects = [
+    {
+      id: 1,
+      name: "Career Path",
+      description: "Guidance for the students for their career.",
+      image: "src/assets/careerpath.png",
+      demoLink: "https://vjscareerpath.vercel.app/",
+      sourceLink: "https://github.com/PREETHI-ASHRITHA/Career-Path.git"
+    },
+    {
+      id: 2,
+      name: "Mad Eats",
+      description: "A basic restaurant website to order food.",
+      image: "src/assets/MadEats.png",
+      demoLink: "https://drive.google.com/file/d/1UxNXuQMsoMApS_1Iz1ZoWPVCPkbGb-v5/view?usp=sharing",
+      sourceLink: "https://github.com/PREETHI-ASHRITHA/Mad-Eats.git"
+    },
+    {
+      id: 3,
+      name: "My Portfolio",
+      description: "Contains all my projects and certificates.",
+      image: "src/assets/portfolioimg.png",
+      demoLink: "https://portfolio-five-dun-88.vercel.app/",
+      sourceLink: "https://github.com/PREETHI-ASHRITHA/Portfolio.git"
+    }
+  ];
+
   return (
     <div className="projects-container">
       <h2 className="projects-title">My Projects</h2>
       
       <div className="projects-grid">
-        <div className="project-card">
-          <img src="src\assets\careerpath.png" alt="Project 1" className="project-image" />
-          <h3 className="project-name">Career Path</h3>
-          <p className="project-description">
-            Guidance for the students for their career.
-          </p>
-          <div className="project-links">
-            <a href="https://vjscareerpath.vercel.app/" className="project-link">View Demo</a>
-            <a href="https://github.com/PREETHI-ASHRITHA/Career-Path.git" className="project-link">Source Code</a>
+        {projects.map((project) => (
+          <div key={project.id} className="project-card">
+            <div className="image-cont">
+              <img src={project.image} alt={project.name} className="project-image" />
+              <div className="image-overlay"></div>
+            </div>
+            <h3 className="project-name">{project.name}</h3>
+            <p className="project-description">{project.description}</p>
+            <div className="project-links">
+              <a href={project.demoLink} className="project-link">View Demo</a>
+              <a href={project.sourceLink} className="project-link">Source Code</a>
+            </div>
           </div>
-        </div>
-
-        <div className="project-card">
-          <img src="src\assets\MadEats.png" alt="Project 2" className="project-image" />
-          <h3 className="project-name">Mad Eats</h3>
-          <p className="project-description">
-            A basic restuarant website to order food.
-          </p>
-          <div className="project-links">
-            <a href="https://drive.google.com/file/d/1UxNXuQMsoMApS_1Iz1ZoWPVCPkbGb-v5/view?usp=sharing" className="project-link">View Demo</a>
-            <a href="https://github.com/PREETHI-ASHRITHA/Mad-Eats.git" className="project-link">Source Code</a>
-          </div>
-        </div>
-
-        <div className="project-card">
-          <img src="src\assets\portfolioimg.png" alt="Project 3" className="project-image" />
-          <h3 className="project-name">My Portfolio</h3>
-          <p className="project-description">
-          Contains all my projects and certificates. 
-          </p>
-          <div className="project-links">
-            <a href="#" className="project-link">View Demo</a>
-            <a href="#" className="project-link">Source Code</a>
-          </div>
-        </div>
+        ))}
       </div>
     </div>
   );
