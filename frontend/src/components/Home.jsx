@@ -5,7 +5,7 @@ import './Home.css';
 
 const Home = () => {
     const handleDownloadCV = () => {
-        const cvUrl = 'Resume.pdf';
+        const cvUrl = 'RESUME80.pdf';
         window.open(cvUrl, '_blank');
     };
 
