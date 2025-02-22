@@ -7,7 +7,7 @@ const Projects = () => {
       id: 1,
       name: "Career Path",
       description: "Guidance for the students for their career.",
-      image: "src/assets/careerpath.png",
+      image: "careerpath.png",
       demoLink: "https://vjscareerpath.vercel.app/",
       sourceLink: "https://github.com/PREETHI-ASHRITHA/Career-Path.git"
     },
@@ -15,7 +15,7 @@ const Projects = () => {
       id: 2,
       name: "Mad Eats",
       description: "A basic restaurant website to order food.",
-      image: "src/assets/MadEats.png",
+      image: "MadEats.png",
       demoLink: "https://drive.google.com/file/d/1UxNXuQMsoMApS_1Iz1ZoWPVCPkbGb-v5/view?usp=sharing",
       sourceLink: "https://github.com/PREETHI-ASHRITHA/Mad-Eats.git"
     },
@@ -23,7 +23,7 @@ const Projects = () => {
       id: 3,
       name: "My Portfolio",
       description: "Contains all my projects and certificates.",
-      image: "src/assets/portfolioimg.png",
+      image: "portfolioimg.png",
       demoLink: "https://portfolio-five-dun-88.vercel.app/",
       sourceLink: "https://github.com/PREETHI-ASHRITHA/Portfolio.git"
     }
