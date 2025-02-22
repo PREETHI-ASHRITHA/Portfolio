@@ -11,7 +11,7 @@ const Certificates = () => {
         <div className="certificate-card">
           <div className="certificate-image-container">
             <img 
-              src="src\assets\HTML.png" 
+              src="HTML.png" 
               alt="HTML and CSS" 
               className="certificate-image"
             />
@@ -31,7 +31,7 @@ const Certificates = () => {
         <div className="certificate-card">
           <div className="certificate-image-container">
             <img 
-              src="src\assets\JS.png" 
+              src="JS.png" 
               alt="Python Essentials" 
               className="certificate-image"
             />
@@ -51,7 +51,7 @@ const Certificates = () => {
         <div className="certificate-card">
           <div className="certificate-image-container">
             <img 
-              src="src\assets\C.png" 
+              src="C.png" 
               alt="C Programming" 
               className="certificate-image"
             />
@@ -71,7 +71,7 @@ const Certificates = () => {
         <div className="certificate-card">
           <div className="certificate-image-container">
             <img 
-              src="src\assets\Java.png" 
+              src="Java.png" 
               alt="Java Oracle Certificate" 
               className="certificate-image"
             />
@@ -91,7 +91,7 @@ const Certificates = () => {
         <div className="certificate-card">
           <div className="certificate-image-container">
             <img 
-              src="src\assets\Python.png" 
+              src="Python.png" 
               alt="Python Essentials" 
               className="certificate-image"
             />
@@ -111,7 +111,7 @@ const Certificates = () => {
         <div className="certificate-card">
           <div className="certificate-image-container">
             <img 
-              src="src\assets\AI.png" 
+              src="AI.png" 
               alt="Azure AI Fundamentals" 
               className="certificate-image"
             />
@@ -131,7 +131,7 @@ const Certificates = () => {
         <div className="certificate-card">
           <div className="certificate-image-container">
             <img 
-              src="src\assets\datamining.png" 
+              src="datamining.png" 
               alt="Data Mining" 
               className="certificate-image"
             />
@@ -151,7 +151,7 @@ const Certificates = () => {
         <div className="certificate-card">
           <div className="certificate-image-container">
             <img 
-              src="src\assets\ml.png" 
+              src="ml.png" 
               alt="Machine Learning" 
               className="certificate-image"
             />
@@ -171,7 +171,7 @@ const Certificates = () => {
         <div className="certificate-card">
           <div className="certificate-image-container">
             <img 
-              src="src\assets\dl.png" 
+              src="dl.png" 
               alt="Deep Learning" 
               className="certificate-image"
             />
